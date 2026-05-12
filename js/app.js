@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // randomly select a tetromino
   let random = Math.floor(Math.random() * theTetrominoes.length);
   let current = theTetrominoes[random][currentRotation];
+  let nextRandom = Math.floor(Math.random() * theTetrominoes.length);
 
   // draw the tetromino
   function draw() {
@@ -75,9 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // move down function
   function moveDown() {
+    freeze();
     undraw();
     currentPosition += width;
     draw();
+  }
+
+  // freeze function
+  function freeze() {
+    if (
+      current.some((index) =>
+        squares[currentPosition + index + width].classList.contains("taken"),
+      )
+    ) {
+      current.forEach((index) =>
+        squares[currentPosition + index].classList.add("taken"),
+      );
+      //start a new tetromino falling
+      random = nextRandom;
+      nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+      current = theTetrominoes[random][currentRotation];
+      currentPosition = 4;
+      draw();
+    }
   }
 
   draw();
