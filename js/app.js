@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // move down function
   function moveDown() {
+    if (timerId === null) return;
     undraw();
     currentPosition += width;
     draw();
@@ -107,12 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
       current.forEach((index) =>
         squares[currentPosition + index].classList.add("taken"),
       );
-      //start a new tetromino falling
       random = nextRandom;
       nextRandom = Math.floor(Math.random() * theTetrominoes.length);
       current = theTetrominoes[random][currentRotation];
       currentPosition = 4;
       draw();
+      if (gameOver()) return;
       displayShape();
       addScore();
     }
@@ -231,11 +232,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const squaresRemoved = squares.splice(i, width);
         squares = squaresRemoved.concat(squares);
         squares.forEach((cell) => grid.appendChild(cell));
+        squares = Array.from(document.querySelectorAll(".grid div"));
       }
     }
   }
 
   // define game over
+  function gameOver() {
+    if (
+      current.some((index) =>
+        squares[currentPosition + index].classList.contains("taken"),
+      )
+    ) {
+      scoreDisplay.innerHTML = "end";
+      clearInterval(timerId);
+      timerId = null;
+      return true;
+    }
+    return false;
+  }
 
   draw();
   moveDown();
