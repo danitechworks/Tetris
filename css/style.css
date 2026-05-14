@@ -132,6 +132,7 @@ td {
 
 td:first-child {
   padding-right: 8px;
+  text-align: left;
 }
 
 .instructions-footer {
