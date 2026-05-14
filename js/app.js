@@ -92,6 +92,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   document.addEventListener("keyup", control);
 
+  // add navigation with buttons for mouse and touch screen
+  const leftBtn = document.getElementById("left-btn");
+  leftBtn.addEventListener("pointerdown", moveLeft);
+
+  const rightBtn = document.getElementById("right-btn");
+  rightBtn.addEventListener("pointerdown", moveRight);
+
+  const downBtn = document.getElementById("down-btn");
+  downBtn.addEventListener("pointerdown", moveDown);
+
+  const rotateBtn = document.getElementById("rotate-btn");
+  rotateBtn.addEventListener("pointerdown", rotate);
+
   // move down function
   function moveDown() {
     if (timerId === null) return;
