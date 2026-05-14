@@ -75,7 +75,7 @@ h3 {
 }
 
 .mini-grid {
-  margin-left: 20px;
+  margin-left: 40px;
   width: 80px;
   height: 80px;
   display: flex;
@@ -100,4 +100,20 @@ h3 {
   font-family: Rubik;
   font-size: 1rem;
   text-align: center;
+}
+
+.mobile-controls {
+  margin-top: 1rem;
+  margin-right: 6rem;
+  text-align: center;
+}
+
+.mobile-controls-btn {
+  margin: 10px auto;
+  background-color: #30abbb;
+  border-radius: 5px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }

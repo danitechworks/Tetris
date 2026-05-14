@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -268,17 +273,20 @@
         <div class="instructions">
           <h5>Instructions</h5>
           <h6>Left</h6>
-          <h6>Right</h6>
-          <h6>Rotate</h6>
-          <h6>Down</h6>
+          <span><i class="fa-solid fa-arrow-left"></i></span>
+          <h6>Right <i class="fa-solid fa-arrow-right"></i></h6>
+          <h6>Rotate <i class="fa-solid fa-arrow-up"></i></h6>
+          <h6>Down <i class="fa-solid fa-arrow-down"></i></h6>
         </div>
       </div>
     </div>
     <div class="mobile-controls">
-      <button id="left-btn">◀</button>
-      <button id="rotate-btn">⟳</button>
-      <button id="right-btn">▶</button>
-      <button id="down-btn">▼</button>
+      <button id="left-btn" class="mobile-controls-btn">◀</button>
+      <button id="rotate-btn" class="mobile-controls-btn">
+        <i class="fa-solid fa-rotate"></i>
+      </button>
+      <button id="right-btn" class="mobile-controls-btn">▶</button>
+      <button id="down-btn" class="mobile-controls-btn">▼</button>
     </div>
   </body>
 </html>
