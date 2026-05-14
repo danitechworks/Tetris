@@ -20,6 +20,7 @@ h1 {
 h3 {
   font-family: Rubik;
   text-align: center;
+  font-size: 2rem;
   color: #30abbb;
   text-shadow:
     2px 2px 0 #000,
@@ -31,7 +32,10 @@ h3 {
 }
 
 .btn {
+  width: 7rem;
+  height: 2rem;
   font-family: Rubik;
+  font-size: 1rem;
   display: block;
   margin: 10px auto;
   background-color: #30abbb;
