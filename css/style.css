@@ -12,6 +12,7 @@ h1 {
   letter-spacing: 4px;
   color: #30abbb;
   text-align: center;
+  margin-bottom: 0;
   text-shadow:
     2px 2px 0 #000,
     4px 4px 8px rgba(0, 0, 0, 0.5);
@@ -20,7 +21,7 @@ h1 {
 h3 {
   font-family: Rubik;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #30abbb;
   text-shadow:
     2px 2px 0 #000,
@@ -37,7 +38,7 @@ h3 {
   font-family: Rubik;
   font-size: 1rem;
   display: block;
-  margin: 10px auto;
+  margin: 2px auto;
   background-color: #30abbb;
   border-radius: 5px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
@@ -49,7 +50,7 @@ h3 {
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .grid-with-controls {
