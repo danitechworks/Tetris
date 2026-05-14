@@ -48,6 +48,19 @@ h3 {
   margin-top: 16px;
 }
 
+.grid-with-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.mobile-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 .grid {
   width: 200px;
   height: 400px;
@@ -94,22 +107,46 @@ h3 {
 }
 
 .instructions {
-  width: 80px;
-  height: 80px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: Rubik;
   font-size: 1rem;
-  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Rubik;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+td {
+  padding-top: 8px;
+  text-align: left;
+}
+
+td:first-child {
+  padding-right: 8px;
+}
+
+.instructions-footer {
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .mobile-controls {
   margin-top: 1rem;
-  margin-right: 6rem;
-  text-align: center;
+  gap: 10px;
+  margin-right: 7rem;
 }
 
 .mobile-controls-btn {
-  margin: 10px auto;
   background-color: #30abbb;
   border-radius: 5px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
