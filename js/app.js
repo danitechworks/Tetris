@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentRotation = 0;
   let timerId;
   let score = 0;
-  const colors = ["#ffd700", "#A020f0", "#00ff7f", "#ff8c00", "#1e90ff"];
+  const colors = ["#ffd700", "#A020f0", "#00ff7f", "#ff8c00", "#1e40ff"];
 
   //The Tetrominoes
   const lTetromino = [
