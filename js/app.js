@@ -105,9 +105,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const rotateBtn = document.getElementById("rotate-btn");
   rotateBtn.addEventListener("pointerdown", rotate);
 
+  // Increase speed deppending on score
+  function determineSpeed() {
+    if (score < 20) return 1000;
+    else if (score < 40) return 900;
+    else if (score < 80) return 800;
+    else if (score < 120) return 700;
+    else if (score < 200) return 600;
+    else if (score < 250) return 500;
+    else if (score < 300) return 400;
+    else if (score < 400) return 300;
+    else return 200;
+  }
+
+  // Create timer
+  function startTimer() {
+    if (timerId) clearInterval(timerId);
+    timerId = setInterval(moveDown, determineSpeed());
+  }
+
   // move down function
   function moveDown() {
-    if (timerId === null) return;
+    if (!timerId) return;
     undraw();
     currentPosition += width;
     draw();
@@ -217,9 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
       timerId = null;
     } else {
       draw();
-      timerId = setInterval(moveDown, 1000);
       nextRandom = Math.floor(Math.random() * theTetrominoes.length);
       displayShape();
+      startTimer();
     }
   });
 
@@ -241,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (row.every((index) => squares[index].classList.contains("taken"))) {
         score += 10;
         scoreDisplay.innerHTML = score;
+        startTimer();
         row.forEach((index) => {
           squares[index].classList.remove("taken");
           squares[index].classList.remove("tetromino");
